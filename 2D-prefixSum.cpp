@@ -46,6 +46,9 @@ int main()
     while(q--){
       ll h1,w1,h2,w2;
       cin>>h1>>w1>>h2>>w2;
+
+      // pref sum for pre[h1+1][w1+1] to pre[h2-1][w2-1]
+      
       cout<<(pre[h2-1][w2-1]-pre[h2-1][w1]-pre[h1][w2-1]+pre[h1][w1])<<endl;
     }
 
