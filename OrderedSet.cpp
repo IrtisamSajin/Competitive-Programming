@@ -23,7 +23,22 @@ int main()
 
   int tc=1;
   cin >> tc;
-  while (tc--){}
+  while (tc--){
+    ll n;
+    cin>>n;
+    ll ans=0;
+    ordered_set s;
+    map<ll,ll>cnt;
+    for(ll i=0;i<n;i++){
+      ll x;
+      cin>>x;
+      ll y=s.order_of_key({x,0}); //y is the number of smaller elements than x
+      ans+=min(y,i-y-cnt[x]);
+      s.insert({x,i});      
+      cnt[x]++; 
+    }
+    cout<<ans<<endl;
+  }
 
   return 0;
 }
